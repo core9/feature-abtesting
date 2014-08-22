@@ -36,7 +36,7 @@ pkg.DemoPan = Class(Panel, [
 ]);
 
 zebra.ui.configure(function(conf) {
-    conf.loadByUrl("http://localhost/zebra/samples/" + "demo.json");
+    conf.loadByUrl("http://www.core9.io/feature-abtesting/samples/" + "demo.json");
 });
 
 })(zebra("ui.demo"), zebra.Class);
