@@ -90,7 +90,7 @@ pkg.PanelsDemo = new Class(pkg.DemoPan, [
         p3.setPreferredSize(270, 190);
         p3.setBorder(zebra.ui.borders.plain);
 
-        var p4_1 = new TextField(new zebra.data.Text(zebra.io.GET("demo/test.txt")));
+        var p4_1 = new TextField(new zebra.data.Text(zebra.io.GET("http://www.core9.io/feature-abtesting/samples/demo/test.txt")));
         p4_1.setBorder(null);
         p4 = new ScrollPan(p4_1);
         p4.setPreferredSize(270, 190);
