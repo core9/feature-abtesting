@@ -99,6 +99,10 @@ pkg.BasicUIDemo = new Class(pkg.DemoPan, [
         p.add(new Button("Button"));
         var bt = new Button(new ImagePan(ui.demo.butterfly));
         bt.setFocusMarkerView(null);
+        bt.bind(function (src) {
+           console.log(src);
+        	alert(src);
+        });
         p.add(bt);
         p.add(new Button(new ImageLabel("Image button", ui.demo.butterfly)));
         bt = new Button("Disabled button");
