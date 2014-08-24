@@ -12,10 +12,20 @@ function ready(func) {
 	}, ms);
 }
 
+var domReady = function (f) {
+    (/complete|loaded|interactive/.test(document.readyState)) ?
+        f() :
+        setTimeout(domReady, 9, f);
+  };
+
 var myGetElementByXpath = function(path) {
 	return document.evaluate(path, document, null, 9, null).singleNodeValue;
 }
 
 ready(function() {
+	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "<span style='color:blue;'>test ok</span>";
+});
+
+domReady(function() {
 	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "<span style='color:red;'>test ok</span>";
 });
