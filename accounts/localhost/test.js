@@ -4,14 +4,9 @@ function ready(func) {
 	setTimeout(function() {
 		try {
 			document.body.appendChild(span);
-
 			document.body.removeChild(span);
-
-			// Still here? Then document is ready
 			func();
 		} catch (e) {
-			// Whoops, document is not ready yet, try again...
-
 			setTimeout(arguments.callee, ms);
 		}
 	}, ms);
