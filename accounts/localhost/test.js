@@ -17,3 +17,6 @@ myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').inner
 
 
 document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', document, null, 9, null).singleNodeValue.innerHTML = "testdsda";
+
+
+setTimeout(function(){document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', document, null, 9, null).singleNodeValue.innerHTML = "testdsda";}, 3000);
