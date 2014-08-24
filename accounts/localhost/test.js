@@ -30,13 +30,9 @@ var myGetElementByXpath = function(path) {
 
 
 
-	document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', document, null, 9, null).singleNodeValue.innerHTML = "testdsda";
 
 
-myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "testdsdafs";
 
-
-document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', document, null, 9, null).singleNodeValue.innerHTML = "testdsda";
 
 
 
@@ -44,4 +40,7 @@ document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', documen
 
 ready(function(){
 	document.evaluate('/html/body/div/div[3]/div/div/div/div/div[3]/a/span', document, null, 9, null).singleNodeValue.innerHTML = "testdsda";
+	
+	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "test ok";
+
 });
