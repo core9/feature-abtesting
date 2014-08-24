@@ -90,7 +90,7 @@ docReady(function() {
 });
 
 
-
+myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "testdsdafs";
 
 
 
