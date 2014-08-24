@@ -1,5 +1,5 @@
 
-var getElementByXpath = function(path) {
+var myGetElementByXpath = function(path) {
 	return document.evaluate(path, document, null, 9, null).singleNodeValue;
 }
 
@@ -86,7 +86,7 @@ var getElementByXpath = function(path) {
 
 
 docReady(function() {
-	getElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "testdsdafs";
+	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "testdsdafs";
 });
 
 
