@@ -17,5 +17,5 @@ var myGetElementByXpath = function(path) {
 }
 
 ready(function() {
-	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "test ok";
+	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "<span style='color:red;'>test ok</span>";
 });
