@@ -23,10 +23,12 @@ var myGetElementByXpath = function(path) {
 }
 
 
-domReady(function() { // slower
-	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "test red";
-});
+
 
 ready(function() {
 	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "test blue";
+});
+
+domReady(function() { // slower
+	myGetElementByXpath('/html/body/div/div[3]/div/div/div/div/div[3]/a/span').innerHTML = "test red";
 });
