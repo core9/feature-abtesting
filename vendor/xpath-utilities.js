@@ -41,6 +41,23 @@ var XPath = {
 
 		return paths.length ? paths.join(" ") : null;
 	},
+	
+	getElementCSSSelector : function(element)
+	{
+	    if (!element || !element.localName)
+	        return "null";
+
+	    var label = element.localName.toLowerCase();
+	    if (element.id)
+	        label += "#" + element.id;
+
+	    if (element.classList && element.classList.length > 0)
+	        label += "." + element.classList.item(0);
+
+	    return label;
+	},
+
+	
 	cssToXPath : function(rule) {
 		var regElement = /^([#.]?)([a-z0-9\\*_-]*)((\|)([a-z0-9\\*_-]*))?/i;
 		var regAttr1 = /^\[([^\]]*)\]/i;
