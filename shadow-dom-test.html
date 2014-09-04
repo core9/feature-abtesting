@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Shadow DOM Example</title>
-  <meta charset="UTF-8" />
-  <style>
-    span {
-      color: red;
-    }
+<title>Shadow DOM Example</title>
+<meta charset="UTF-8" />
+<style>
+h1{
+  font-size:60px;
+}
+</style>
+<script>
+	window.addEventListener("load", function() {
 
-    #shadowHost {
-      border: 1px solid black;
-    }
-  </style>
-  <script>
-    window.addEventListener("load", function() {
-      var shadowHost = document.getElementById("shadowHost");
-      var shadowRoot = new WebKitShadowRoot(shadowHost);
-      var shadowChild = document.createElement("span");
+		var el = document.createElement('div');
+		el.id = "test";
+		var shadow = el.createShadowRoot();
+		shadow.innerHTML = '<div id="q"><h1>test</h1></div>';
+		document.body.appendChild(el);
 
-      shadowChild.textContent = "This is part of the shadow DOM";
-      shadowRoot.appendChild(shadowChild);
-    }, false);
-  </script>
+	}, false);
+
+	function addEvent() {
+		var inShadowDom = document.querySelector('#test').shadowRoot
+				.getElementsByTagName('div');
+		
+		function click(){
+			alert("hi");
+		}
+		
+		inShadowDom[0].addEventListener("click", click);
+		
+		console.log(inShadowDom);
+	}
+
+	setTimeout(addEvent, 1000);
+</script>
 </head>
 <body>
-  <div id="shadowHost">
-    <span id="child">This is not part of the shadow DOM</span>
-  </div>
+	<div id="demo"><h1>demo</h1></div>
 </body>
 </html>
