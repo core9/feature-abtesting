@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shadow DOM Example</title>
+  <meta charset="UTF-8" />
+  <style>
+    span {
+      color: red;
+    }
+
+    #shadowHost {
+      border: 1px solid black;
+    }
+  </style>
+  <script>
+    window.addEventListener("load", function() {
+      var shadowHost = document.getElementById("shadowHost");
+      var shadowRoot = new WebKitShadowRoot(shadowHost);
+      var shadowChild = document.createElement("span");
+
+      shadowChild.textContent = "This is part of the shadow DOM";
+      shadowRoot.appendChild(shadowChild);
+    }, false);
+  </script>
+</head>
+<body>
+  <div id="shadowHost">
+    <span id="child">This is not part of the shadow DOM</span>
+  </div>
+</body>
+</html>
