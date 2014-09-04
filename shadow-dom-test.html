@@ -24,7 +24,7 @@ h1{
 				.getElementsByTagName('div');
 		
 		function click(){
-			alert("hi");
+			document.querySelector('#demo').innerHTML = new Date();
 		}
 		
 		inShadowDom[0].addEventListener("click", click);
